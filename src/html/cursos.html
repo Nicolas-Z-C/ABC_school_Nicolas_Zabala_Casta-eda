@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los Cursos - ABCschool</title>
+    <link rel="stylesheet" href="/src/css/coursesshow.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="landing-navbar">
+        <div class="landing-navbar-container">
+            <a href="/index.html" class="landing-navbar-logo">
+                <div class="landing-navbar-logo-img">ABC</div>
+                <span class="landing-navbar-logo-text">ABCschool</span>
+            </a>
+            <div class="landing-navbar-menu">
+                <a href="/index.html" class="landing-navbar-link">Inicio</a>
+                <a href="/src/html/cursos.html" class="landing-navbar-link active">Cursos</a>
+                <a href="/src/html/admin/login.html" class="landing-navbar-btn">Iniciar Sesión</a>
+            </div>
+            <button class="landing-navbar-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="courses-hero">
+        <div class="courses-hero-container">
+            <h1 class="courses-hero-title">Explora Todos Nuestros Cursos</h1>
+            <p class="courses-hero-description">Encuentra el curso perfecto para ti y comienza tu camino de aprendizaje</p>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-section">
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Buscar cursos por nombre, código o profesor..." class="search-input">
+            </div>
+            <div class="filter-box">
+                <select id="teacher-filter" class="filter-select">
+                    <option value="">Todos los Profesores</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="all-courses-section">
+        <div class="all-courses-container">
+            <div class="courses-count">
+                <span id="courses-count-text">Cargando cursos...</span>
+            </div>
+            
+            <div id="all-courses" class="all-courses-grid">
+                <!-- Los cursos se cargarán dinámicamente desde JavaScript -->
+            </div>
+            
+            <div id="no-results" class="no-results" style="display: none;">
+                <div class="no-results-icon">?</div>
+                <h3>No se encontraron cursos</h3>
+                <p>Intenta con otros términos de búsqueda o filtros</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <div class="footer-logo-img">ABC</div>
+                    <span class="footer-logo-text">ABCschool</span>
+                </div>
+                <p class="footer-description">Plataforma educativa dedicada a ofrecer cursos de calidad para el desarrollo profesional.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="/src/html/cursos.html">Cursos</a></li>
+                    <li><a href="/src/html/admin/login.html">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: info@abcschool.com</li>
+                    <li>Teléfono: +57 123 456 7890</li>
+                    <li>Ubicación: Bucaramanga, Colombia</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 ABCschool. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/coursesshow.js"></script>
+</body>
+</html>

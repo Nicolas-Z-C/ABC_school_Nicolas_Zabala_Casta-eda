@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABCschool - Plataforma Educativa</title>
+    <link rel="stylesheet" href="/src/css/index.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="landing-navbar">
+        <div class="landing-navbar-container">
+            <a href="index.html" class="landing-navbar-logo">
+                <div class="landing-navbar-logo-img">ABC</div>
+                <span class="landing-navbar-logo-text">ABCschool</span>
+            </a>
+            <div class="landing-navbar-menu">
+                <a href="index.html" class="landing-navbar-link active">Inicio</a>
+                <a href="/src/html/cursos.html" class="landing-navbar-link">Cursos</a>
+                <a href="/src/html/admin/login.html" class="landing-navbar-btn">Iniciar Sesión</a>
+            </div>
+            <button class="landing-navbar-toggle" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Aprende sin límites con <span>ABCschool</span></h1>
+                <p class="hero-description">Descubre cursos de alta calidad diseñados por expertos. Desarrolla nuevas habilidades y alcanza tus metas profesionales.</p>
+                <div class="hero-buttons">
+                    <a href="cursos.html" class="btn-primary">Explorar Cursos</a>
+                    <a href="#featured" class="btn-secondary">Ver Destacados</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-illustration"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses Section -->
+    <section id="featured" class="featured-section">
+        <div class="featured-container">
+            <h2 class="section-title">Cursos Destacados</h2>
+            <p class="section-subtitle">Los mejores cursos seleccionados para ti</p>
+            
+            <div id="featured-courses" class="courses-grid">
+                <!-- Los cursos se cargarán dinámicamente desde JavaScript -->
+            </div>
+            
+            <div class="view-all-container">
+                <a href="cursos.html" class="btn-view-all">Ver Todos los Cursos →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">+</div>
+                <div class="stat-number" id="student-count">0</div>
+                <div class="stat-label">Estudiantes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">■</div>
+                <div class="stat-number" id="course-count">0</div>
+                <div class="stat-label">Cursos</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">★</div>
+                <div class="stat-number" id="teacher-count">0</div>
+                <div class="stat-label">Profesores</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">✓</div>
+                <div class="stat-number">4.8</div>
+                <div class="stat-label">Calificación</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <div class="footer-logo-img">ABC</div>
+                    <span class="footer-logo-text">ABCschool</span>
+                </div>
+                <p class="footer-description">Plataforma educativa dedicada a ofrecer cursos de calidad para el desarrollo profesional.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="pages/admin/login.html">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Email: info@abcschool.com</li>
+                    <li>Teléfono: +57 123 456 7890</li>
+                    <li>Ubicación: Bucaramanga, Colombia</li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 ABCschool. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>

@@ -154,11 +154,11 @@ class teachersComponent extends HTMLElement {
                 });
             });
         });
+        // === BOTÓN CREAR: SOLO UNA VEZ ===
         const createBtn = this.closest('.dashboard')?.querySelector('.tCreate');
-        if (createBtn) {
-            createBtn.addEventListener('click', () => {
-                this.openCreateModal();
-            });
+        if (createBtn && !createBtn.dataset.listenerAttached) {
+            createBtn.addEventListener('click', () => this.openCreateModal());
+            createBtn.dataset.listenerAttached = 'true';
         }
     }
 }

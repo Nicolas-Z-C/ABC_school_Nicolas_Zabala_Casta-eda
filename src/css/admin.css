@@ -1,0 +1,274 @@
+/* === ESTILOS PARA ADMIN.JS === */
+
+admin-app {
+    display: block;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+admin-app h2 {
+    color: #2c5f7c;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    border-bottom: 3px solid #4a9eba;
+    padding-bottom: 0.5rem;
+}
+
+admin-app > p {
+    color: #5a7d92;
+    font-size: 1.15rem;
+    margin-bottom: 2.5rem;
+}
+
+.admin-panel {
+    background: linear-gradient(135deg, #f8fbfd 0%, #e8f4f8 100%);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 25px rgba(44, 95, 124, 0.12);
+}
+
+.admin-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.admin-actions button {
+    padding: 2.5rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-transform: capitalize;
+}
+
+.admin-actions button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+}
+
+.admin-actions button:hover::before {
+    transform: translateX(0);
+}
+
+.admin-actions button::after {
+    font-size: 3.5rem;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.25;
+    transition: all 0.4s ease;
+}
+
+.admin-actions button:hover::after {
+    opacity: 0.45;
+    transform: translateY(-50%) scale(1.15) rotate(5deg);
+}
+
+.admin-actions button:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.admin-actions button:active {
+    transform: translateY(-6px) scale(1.01);
+}
+
+/* Estilos específicos por botón */
+#manage-teachers {
+    background: linear-gradient(135deg, #4a9eba 0%, #2c5f7c 100%);
+}
+
+#manage-teachers::after {
+    content: '👨‍🏫';
+}
+
+#manage-teachers:hover {
+    box-shadow: 0 15px 45px rgba(74, 158, 186, 0.5);
+}
+
+#manage-courses {
+    background: linear-gradient(135deg, #6bc4a6 0%, #3d9b7e 100%);
+}
+
+#manage-courses::after {
+    content: '📚';
+}
+
+#manage-courses:hover {
+    box-shadow: 0 15px 45px rgba(107, 196, 166, 0.5);
+}
+
+#add-admin {
+    background: linear-gradient(135deg, #f5a962 0%, #e67e22 100%);
+}
+
+#add-admin::after {
+    content: '👤';
+}
+
+#add-admin:hover {
+    box-shadow: 0 15px 45px rgba(245, 169, 98, 0.5);
+}
+
+/* Sección de datos */
+.admin-data {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.admin-data h3 {
+    color: #2c5f7c;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #4a9eba;
+    padding-left: 1rem;
+    font-weight: 700;
+}
+
+.admin-data p {
+    color: #5a7d92;
+    font-size: 1.15rem;
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #f8fbfd 0%, #f0f6f9 100%);
+    border-radius: 10px;
+    border-left: 3px solid #6bc4a6;
+    transition: all 0.3s ease;
+}
+
+.admin-data p:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(107, 196, 166, 0.2);
+}
+
+.admin-data strong {
+    color: #2c5f7c;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+/* Estilos del Modal de Crear Admin */
+#create-admin-form {
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#create-admin-form h3 {
+    color: #2c5f7c;
+    margin-bottom: 1.5rem;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+#create-admin-form label {
+    display: block;
+    color: #5a7d92;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+#create-admin-form input {
+    width: 100%;
+    padding: 0.85rem;
+    border: 2px solid #e0edf3;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+#create-admin-form input:focus {
+    outline: none;
+    border-color: #4a9eba;
+    box-shadow: 0 0 0 3px rgba(74, 158, 186, 0.1);
+}
+
+#create-admin-form button {
+    padding: 0.85rem 1.75rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+#create-admin-form button[type="submit"] {
+    background: linear-gradient(135deg, #4a9eba 0%, #2c5f7c 100%);
+    color: white;
+}
+
+#create-admin-form button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 158, 186, 0.3);
+}
+
+#create-admin-form .cancel {
+    background: #e0edf3;
+    color: #5a7d92;
+}
+
+#create-admin-form .cancel:hover {
+    background: #d0dde3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    admin-app {
+        padding: 1rem;
+    }
+    
+    .admin-actions {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .admin-actions button {
+        padding: 2rem 1.5rem;
+    }
+    
+    .admin-actions button::after {
+        font-size: 2.5rem;
+        right: 1rem;
+    }
+    
+    admin-app h2 {
+        font-size: 2rem;
+    }
+}

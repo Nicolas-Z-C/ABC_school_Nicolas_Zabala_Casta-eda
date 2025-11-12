@@ -1,15 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABCschool</title>
-    <script type="module" src="../../js/modules/login-check.js"></script>
-    <script type="module" src="../../js/components/admin.js"></script>
+    <title>Panel Administrador - ABCschool</title>
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/admin.css">
 </head>
 <body>
-    <div id="#app">
+    <!-- Navbar simplificada -->
+    <nav class="edu-navbar">
+        <div class="edu-navbar-container">
+            <a href="admin.html" class="edu-navbar-logo">
+                <div class="edu-navbar-logo-img">ABC</div>
+                <span class="edu-navbar-logo-text">Sistema Educativo</span>
+            </a>
+            <button class="edu-navbar-logout" onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </nav>
+
+    <div id="app">
         <admin-app></admin-app>
     </div>
+
+    <script>
+        function logout() {
+            sessionStorage.removeItem('login');
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        }
+
+        // Verificar autenticación
+        if (sessionStorage.getItem('login') !== 'true') {
+            window.location.href = 'login.html';
+        }
+
+        // Efecto scroll en navbar
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.edu-navbar').classList.add('scrolled');
+            } else {
+                document.querySelector('.edu-navbar').classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <script type="module" src="../../js/components/admin.js"></script>
 </body>
 </html>

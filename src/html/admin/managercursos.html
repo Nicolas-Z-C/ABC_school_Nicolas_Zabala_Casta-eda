@@ -1,19 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos</title>
-    <script type="module" src="../../js/modules/login-check.js"></script>
-    <script type="module" src="../../js/components/courses.js"></script>
+    <title>Gestión de Cursos - ABCschool</title>
+    <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/courses.css">
 </head>
 <body>
+    <!-- Navbar simplificada -->
+    <nav class="edu-navbar">
+        <div class="edu-navbar-container">
+            <a href="admin.html" class="edu-navbar-logo">
+                <div class="edu-navbar-logo-img">ABC</div>
+                <span class="edu-navbar-logo-text">Sistema Educativo</span>
+            </a>
+            <button class="edu-navbar-logout" onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </nav>
+
     <section class="dashboard">
-        <div class="createCourse">
-            <button class="cCreate">Crear nuevo curso</button>
+        <div style="max-width: 1400px; margin: 2rem auto; padding: 0 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h1 style="color: #2c5f7c; font-size: 2rem; font-weight: 700;">Gestión de Cursos</h1>
+                <button class="cCreate" style="background: linear-gradient(135deg, #6bc4a6 0%, #3d9b7e 100%); color: white; padding: 0.85rem 1.75rem; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; box-shadow: 0 3px 10px rgba(107, 196, 166, 0.3); transition: all 0.3s ease; font-size: 1rem;">
+                    ➕ Crear Curso
+                </button>
+            </div>
+            
+            <div id="app">
+                <app-courses></app-courses>
+            </div>
         </div>
-        <div id="app">
-            <app-courses></app-courses>
-        </div>
+    </section>
+
+    <script>
+        function logout() {
+            sessionStorage.removeItem('login');
+            localStorage.removeItem('currentUser');
+            window.location.href = 'login.html';
+        }
+
+        // Verificar autenticación
+        if (sessionStorage.getItem('login') !== 'true') {
+            window.location.href = 'login.html';
+        }
+
+        // Efecto scroll en navbar
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.querySelector('.edu-navbar').classList.add('scrolled');
+            } else {
+                document.querySelector('.edu-navbar').classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <script type="module" src="../../js/components/courses.js"></script>
 </body>
 </html>
