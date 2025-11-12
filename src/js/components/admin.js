@@ -102,7 +102,7 @@ class AdminComponent extends HTMLElement {
             window.location.href='profesores.html';
         });
         manageCoursesBtn.addEventListener('click',()=>{
-            window.location.href='cursos.html';
+            window.location.href='managercursos.html';
         });
         addAdminBtn.addEventListener('click',()=>{
             this.openCreateModal();;
