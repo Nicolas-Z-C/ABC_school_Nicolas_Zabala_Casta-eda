@@ -34,7 +34,6 @@ class Login extends HTMLElement {
             const users=read('admins');
             const userFound=users.find(user=>user.email===email && user.password===password);
             if(userFound){
-                alert('Login exitoso');
                 sessionStorage.setItem('login','true');
                 write('currentUser',userFound);
                 window.location.href='admin.html';
