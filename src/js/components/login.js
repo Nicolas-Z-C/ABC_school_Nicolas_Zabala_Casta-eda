@@ -1,8 +1,8 @@
 import {read,write} from '../modules/local-storage.js';
 
 let admin=[{
-    email:"ff",
-    password:"ff"
+    email:"admin@test",
+    password:"test"
 }]
 write('admins',admin);
 class Login extends HTMLElement {
