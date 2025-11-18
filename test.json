@@ -1,0 +1,42 @@
+{
+     "profe1":{
+            "name": "María González",
+            "email": "maria.gonzalez@abcschool.com",
+            "code": "PROF001",
+            "status": "Activo",
+            "img": "https://randomuser.me/api/portraits/women/44.jpg",
+            "area": "Matemáticas"
+        },
+    "profe2":{
+            "name": "Carlos Ramírez",
+            "email": "carlos.ramirez@abcschool.com",
+            "code": "PROF002",
+            "status": "Activo",
+            "img": "https://randomuser.me/api/portraits/men/32.jpg",
+            "area": "Programación"
+        },
+    "profe3":{
+            "name": "Ana López",
+            "email": "ana.lopez@abcschool.com",
+            "code": "PROF003",
+            "status": "Activo",
+            "img": "https://randomuser.me/api/portraits/women/68.jpg",
+            "area": "Historia"
+        },
+    "profe4":{
+            "name": "Luis Herrera",
+            "email": "luis.herrera@abcschool.com",
+            "code": "PROF004",
+            "status": "Inactivo",
+            "img": "https://randomuser.me/api/portraits/men/45.jpg",
+            "area": "Ciencias Naturales"
+        },
+    "profe5": {
+            "name": "Sofía Pérez",
+            "email": "sofia.perez@abcschool.com",
+            "code": "PROF005",
+            "status": "Activo",
+            "img": "https://randomuser.me/api/portraits/women/22.jpg",
+            "area": "Inglés"
+        }
+}

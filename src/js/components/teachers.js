@@ -79,7 +79,6 @@ class teachersComponent extends HTMLElement {
                 img: creareform.get('img'),
                 subject: creareform.get('area')
             };
-    
             teachers.push(newTeacher);
             write('teachers', teachers);
             closeModal();
@@ -89,6 +88,88 @@ class teachersComponent extends HTMLElement {
             if (e.target === modal) closeModal();
         });
     }
+    
+
+
+
+
+
+    openChargeModal() {
+        const teachers = read('teachers');
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+            position:fixed; top:0; left:0; width:100%; height:100%;
+            background:rgba(0,0,0,0.5); display:flex; align-items:center;
+            justify-content:center; z-index:1000;
+        `;
+        modal.innerHTML = /*html*/`
+            <form id="charge-teacher-form" style="
+                background:#fff; padding:20px; border-radius:8px;
+                width:90%; max-width:400px; box-shadow:0 4px 12px rgba(0,0,0,0.2);
+            ">
+                <h3>Carge los nuevos profesores</h3>
+
+                <label>Archivo</label>
+                <input type="file" class="json" required>
+    
+                <div style="margin-top:15px; display:flex; gap:10px; justify-content:flex-end;">
+                    <button type="button" class="cancel">Cancelar</button>
+                    <button type="submit">Cargar</button>
+                </div>
+            </form>
+        `;
+        document.body.appendChild(modal);
+        const form = modal.querySelector('#charge-teacher-form');
+        const cancel = modal.querySelector('.cancel');
+        const closeModal = () => {
+            if (document.body.contains(modal)) {
+                document.body.removeChild(modal);
+            }
+        };
+        cancel.addEventListener('click', closeModal);
+        form.addEventListener('submit', e => {
+
+            datasest=document.querySelector(".json")
+            data=datasest.files();
+            reader = new FileReader()
+            const newteachers={};
+            JSON.stringify(file)
+            const db = read('teachers')
+            db.push()
+            write('teachers', db);
+            closeModal();
+            this.render();  
+        });
+        modal.addEventListener('click', e => {
+            if (e.target === modal) closeModal();
+        });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     addEventListeners(){
         const deleteButtons=this.querySelectorAll('.delete-teacher');
         const editButtons=this.querySelectorAll('.edit-teacher');
@@ -159,6 +240,11 @@ class teachersComponent extends HTMLElement {
         if (createBtn && !createBtn.dataset.listenerAttached) {
             createBtn.addEventListener('click', () => this.openCreateModal());
             createBtn.dataset.listenerAttached = 'true';
+        }
+        const chargebtn = this.closest('.dashboard')?.querySelector('.tCharge');
+        if (chargebtn && !chargebtn.dataset.listenerAttached) {
+            chargebtn.addEventListener('click', () => this.openChargeModal());
+            chargebtn.dataset.listenerAttached = 'true';
         }
     }
 }

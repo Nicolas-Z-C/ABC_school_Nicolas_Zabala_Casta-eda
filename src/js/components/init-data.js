@@ -22,7 +22,7 @@ const teachers = [
         code: "PROF001",
         status: "Activo",
         img: "https://randomuser.me/api/portraits/women/44.jpg",
-        subject: "Matemáticas"
+        area: "Matemáticas"
     },
     {
         name: "Carlos Ramírez",
@@ -30,7 +30,7 @@ const teachers = [
         code: "PROF002",
         status: "Activo",
         img: "https://randomuser.me/api/portraits/men/32.jpg",
-        subject: "Programación"
+        area: "Programación"
     },
     {
         name: "Ana López",
@@ -38,7 +38,7 @@ const teachers = [
         code: "PROF003",
         status: "Activo",
         img: "https://randomuser.me/api/portraits/women/68.jpg",
-        subject: "Historia"
+        area: "Historia"
     },
     {
         name: "Luis Herrera",
@@ -46,7 +46,7 @@ const teachers = [
         code: "PROF004",
         status: "Inactivo",
         img: "https://randomuser.me/api/portraits/men/45.jpg",
-        subject: "Ciencias Naturales"
+        area: "Ciencias Naturales"
     },
     {
         name: "Sofía Pérez",
@@ -54,7 +54,7 @@ const teachers = [
         code: "PROF005",
         status: "Activo",
         img: "https://randomuser.me/api/portraits/women/22.jpg",
-        subject: "Inglés"
+        area: "Inglés"
     }
 ];
 

@@ -12,3 +12,7 @@ export function read(dbName){
     return Array.isArray(data) ? data : [data]; 
 };
 
+reader = new FileReader()
+read.onload();
+
+JSON.stringify(file)
