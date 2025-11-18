@@ -129,13 +129,25 @@ class teachersComponent extends HTMLElement {
         cancel.addEventListener('click', closeModal);
         form.addEventListener('submit', e => {
 
-            datasest=document.querySelector(".json")
-            data=datasest.files();
-            reader = new FileReader()
+            let datasest=document.querySelector(".json")
+            let data=datasest.files();
+            let reader = new FileReader();
+            let chargedTeachers = reader.readAsText(data)
+            let teacherss = JSON.stringify(chargedTeachers)
             const newteachers={};
-            JSON.stringify(file)
-            const db = read('teachers')
-            db.push()
+            for(let i=0;i<teacherss.length;i++){
+                const newTeacher = {
+                    name: teacherss[i].name,
+                    email: teacherss[i].email,
+                    code: teacherss[i].code,
+                    status: teacherss[i].status,
+                    img: teacherss[i].img,
+                    area: teacherss[i].area
+                };
+                newteachers.push(newTeacher);
+            }
+            let db = read('teachers');
+            db.push(newteachers);
             write('teachers', db);
             closeModal();
             this.render();  
